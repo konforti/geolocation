@@ -14,13 +14,18 @@
   
   function showPosition(position) {
     var data = document.getElementById("data");
-    data.innerHTML =
-      "Latitude: " + position.coords.latitude + 
-      "%0D%0ALongitude: " + position.coords.longitude + 
-      "%0D%0Aaccuracy: " + position.coords.accuracy;
-    
+    data.innerHTML = getContent('<br>');
+
     var send = document.getElementById("send");
-    send.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML);
+    send.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + getContent('%0D%0A'));
+  }
+  
+  function getContent(br) {
+    return (
+      "Latitude: " + position.coords.latitude + br +
+      "Longitude: " + position.coords.longitude + br +
+      "Accuracy: " + position.coords.accuracy;
+    )
   }
 </script>
 </head>
