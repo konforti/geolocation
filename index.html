@@ -2,20 +2,21 @@
 <html>
 <head>
 <script>
-  var data = document.getElementById("data");
   function getLocation() {
     if (navigator.geolocation) {
       navigator.geolocation.watchPosition(showPosition);
     }
-    else{
+    else {
+      var data = document.getElementById("data");
       data.innerHTML="Geolocation is not supported by this browser.";
     }
   }
   
   function showPosition(position) {
-    data.innerHTML=
-    "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;
+    var data = document.getElementById("data");
+    data.innerHTML =
+      "Latitude: " + position.coords.latitude + 
+      "<br>Longitude: " + position.coords.longitude;
     
     var link = document.createElement('a');
     link.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML);
