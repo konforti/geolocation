@@ -16,21 +16,15 @@
     var data = document.getElementById("data");
     data.innerHTML =
       "Latitude: " + position.coords.latitude + 
-      "<br>Longitude: " + position.coords.longitude;
+      "\n\rLongitude: " + position.coords.longitude;
     
-    var link = document.createElement('a');
-    link.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML);
-    
-    var linkText = document.createTextNode("Send Mail");
-    link.appendChild(linkText);
-    
-    document.body.appendChild(link);
+    var send = document.getElementById("send");
+    send.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML);
   }
 </script>
 </head>
 <body onload="getLocation()">
 <div id="data"></div>
-
-
+<a id="send">Send Mail</a>
 </body>
 </html>
