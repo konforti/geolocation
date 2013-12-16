@@ -1,37 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Heganoo Geolocatior</title>
+<title>Heganoo Geolocator</title>
 <meta name="description" content="Heganoo - Your content on a map, any place and any time!">
 <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport">
-<script>
-  function getLocation() {
-    if (navigator.geolocation) {
-      navigator.geolocation.watchPosition(showPosition);
-    }
-    else {
-      var data = document.getElementById("data");
-      data.innerHTML="Geolocation is not supported by this browser.";
-    }
-  }
-  
-  function showPosition(position) {
-    var data = document.getElementById("data");
-    data.innerHTML = getContent('<br>', position);
-
-    var send = document.getElementById("send");
-    send.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + getContent('%0D%0A', position));
-  }
-  
-  function getContent(br, position) {
-    return  "Latitude: " + position.coords.latitude + br +
-            "Longitude: " + position.coords.longitude + br +
-            "Accuracy: " + position.coords.accuracy;
-  }
-</script>
+<script type="text/javascript" async src="script.js"></script>
+<link type="text/css" rel="stylesheet" media="all" href="style.css">
 </head>
 <body onload="getLocation()">
-<div id="data"></div>
-<a id="send">Send Mail</a>
+  <h3 id="data"></h3>
+  <a id="send">Send Mail</a>
 </body>
 </html>
