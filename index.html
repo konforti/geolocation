@@ -2,6 +2,7 @@
 <html>
 <body onload="getLocation()">
 <div id="data"></div>
+<a href="mailto: ?subject=Geolocation&body=your body">Send Mail</a>
 
 <script>
   var data = document.getElementById("data");
@@ -17,7 +18,15 @@
   function showPosition(position) {
     data.innerHTML=
     "Latitude: " + position.coords.latitude + 
-    "<br>Longitude: " + position.coords.longitude;	
+    "<br>Longitude: " + position.coords.longitude;
+    
+    var link = document.createElement('a');
+    link.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML + ');
+    
+    var linkText = document.createTextNode("Send Mail");
+    link.appendChild(linkText);
+    
+    document.body.appendChild(link);
   }
 </script>
 </body>
