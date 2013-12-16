@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<body onload="getLocation()">
+<div id="data"></div>
+
+<script>
+  var data = document.getElementById("data");
+  function getLocation() {
+    if (navigator.geolocation) {
+      navigator.geolocation.watchPosition(showPosition);
+    }
+    else{
+      data.innerHTML="Geolocation is not supported by this browser.";
+    }
+  }
+  
+  function showPosition(position) {
+    data.innerHTML=
+    "Latitude: " + position.coords.latitude + 
+    "<br>Longitude: " + position.coords.longitude;	
+  }
+</script>
+</body>
+</html>
