@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html>
-<body onload="getLocation()">
-<div id="data"></div>
-
+<head>
 <script>
   var data = document.getElementById("data");
   function getLocation() {
@@ -20,7 +18,7 @@
     "<br>Longitude: " + position.coords.longitude;
     
     var link = document.createElement('a');
-    link.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML + ');
+    link.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML);
     
     var linkText = document.createTextNode("Send Mail");
     link.appendChild(linkText);
@@ -28,5 +26,10 @@
     document.body.appendChild(link);
   }
 </script>
+</head>
+<body onload="getLocation()">
+<div id="data"></div>
+
+
 </body>
 </html>
