@@ -16,7 +16,7 @@
     var data = document.getElementById("data");
     data.innerHTML =
       "Latitude: " + position.coords.latitude + 
-      "\n\rLongitude: " + position.coords.longitude;
+      " Longitude: " + position.coords.longitude;
     
     var send = document.getElementById("send");
     send.setAttribute('href', 'mailto: ?subject=Geolocation&body=' + data.innerHTML);
