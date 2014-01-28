@@ -1,6 +1,19 @@
+body {
+ text-align: center;
+  margin: 0;
+}
+
+header {
+  box-shadow: 0 0 10px #ccc;
+  margin: 0;
+  padding: 12px;
+  background: url('applogo.png') no-repeat 0 50%;
+}
+
 #data {
-  text-align:center;
+  text-align:left;
   height: 70px;
+  display: inline-block;
 }
 
 #send {
