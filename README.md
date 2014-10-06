@@ -1,3 +1,4 @@
-geolocation
-===========
-A very simple tool for getting your current GPS location and send it by mail.
+## geolocation
+
+A very simple webapp for getting your current GPS location and send it by mail.
+
